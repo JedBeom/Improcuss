@@ -1,4 +1,4 @@
-module github.com/JedBeom/swms
+module github.com/JedBeom/Improcuss
 
 require (
 	github.com/fasthttp/router v0.3.1
