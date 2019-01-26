@@ -5,13 +5,17 @@ import (
 )
 
 var (
-	usersPool *sync.Pool
+	sWPool *sync.Pool
 )
 
-func initUsersPool() {
-	usersPool = &sync.Pool{
+func init() {
+	initsWPool()
+}
+
+func initsWPool() {
+	sWPool = &sync.Pool{
 		New: func() interface{} {
-			return new([]User)
+			return new(statusWriter)
 		},
 	}
 

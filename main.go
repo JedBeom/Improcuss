@@ -3,30 +3,27 @@ package main
 import (
 	"database/sql"
 	"log"
+	"net/http"
+
+	"github.com/go-chi/chi"
 
 	_ "github.com/lib/pq"
-
-	"github.com/fasthttp/router"
-	"github.com/valyala/fasthttp"
 )
 
 type Server struct {
-	db     *sql.DB
-	router *router.Router
+	DB     *sql.DB
+	Router chi.Router
 }
 
 var s Server
 
 func main() {
 
-	initUsersPool()
-
-	s.router = router.New()
 	s.route()
 	s.initDb()
 
 	log.Println("Starting server.")
-	err := fasthttp.ListenAndServe(":8080", s.router.Handler)
+	err := http.ListenAndServe(":8080", s.Router)
 	if err != nil {
 		log.Println("Server Error:", err)
 	}
