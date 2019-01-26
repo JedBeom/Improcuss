@@ -27,7 +27,7 @@ func (u *User) newSession() (sess Session, err error) {
 	query := `INSERT into sessions (uuid, email, user_id, created_at)
 VALUES ($1, $2, $3, $4) RETURNING (id, uuid, email, user_id, created_at)`
 
-	stmt, err := s.db.Prepare(query)
+	stmt, err := s.DB.Prepare(query)
 	defer closeStmt(stmt)
 	if err != nil {
 		return

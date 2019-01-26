@@ -14,7 +14,7 @@ func (u User) register() (err error) {
 (email, password, real_name, student_id, username, created_at, modified_at)
 VALUES ($1, $2, $3, $4, $5, $6, $7)
 RETURNING id`
-	stmt, err := s.db.Prepare(query)
+	stmt, err := s.DB.Prepare(query)
 	defer closeStmt(stmt)
 	if err != nil {
 		return
@@ -27,7 +27,7 @@ RETURNING id`
 
 func login(email, password string) (success bool, err error) {
 	query := "SELECT password FROM users WHERE email = $1"
-	stmt, err := s.db.Prepare(query)
+	stmt, err := s.DB.Prepare(query)
 	defer closeStmt(stmt)
 	if err != nil {
 		return
@@ -48,7 +48,7 @@ func userByEmail(email string) (u User, err error) {
 	query := `SELECT 
        id, password, real_name, student_id, username, created_at, modified_at, is_admin, is_certified, is_blocked 
 FROM users WHERE email = $1`
-	stmt, err := s.db.Prepare(query)
+	stmt, err := s.DB.Prepare(query)
 	defer closeStmt(stmt)
 	if err != nil {
 		return
@@ -63,7 +63,7 @@ FROM users WHERE email = $1`
 func userByID(id int) (u User, err error) {
 	query := `SELECT email, password, real_name, student_id, username, created_at, modified_at FROM users
 WHERE id = $1`
-	stmt, err := s.db.Prepare(query)
+	stmt, err := s.DB.Prepare(query)
 	defer closeStmt(stmt)
 	if err != nil {
 		return
@@ -78,7 +78,7 @@ func getUsers(limit, offset int) (users []User, err error) {
 	query := `SELECT id, email, password, real_name, student_id, username, created_at, modified_at
 FROM users ORDER BY id LIMIT $1 OFFSET $2 `
 
-	stmt, err := s.db.Prepare(query)
+	stmt, err := s.DB.Prepare(query)
 	defer closeStmt(stmt)
 	if err != nil {
 		return
