@@ -8,9 +8,6 @@
         <link rel="stylesheet" href="/static/bootstrap.4.2.1.min.css"
               integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
               crossorigin="anonymous">
-        <!--
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-        -->
         <link rel="stylesheet" href="/static/custom.css">
 
     </head>
@@ -35,6 +32,12 @@
     <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
             integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
             crossorigin="anonymous"></script>
+    <script src="/static/timeago.min.js"></script>
+    <script src="/static/timeago.locales.min.js"></script>
+    <script defer>
+        let nodes = document.querySelectorAll('time');
+        timeago.render(nodes, 'ko');
+    </script>
     </body>
     </html>
 {{ end }}

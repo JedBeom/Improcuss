@@ -39,12 +39,19 @@ type Thread struct {
 	ThreadID int
 	UserID   int
 
+	NumUser int
+	NumRes  int
+
 	CategoryIDs []int
+
+	upVote    int
+	downVote  int
+	TotalVote int
 
 	Invisible bool
 }
 
-type Comment struct {
+type Res struct {
 	ThreadID int
 	Order    int
 	UserID   int
@@ -60,7 +67,7 @@ type Comment struct {
 }
 
 type Category struct {
-	ID              int
-	Name            string
-	NumberOfThreads int
+	ID        int
+	Name      string
+	NumThread int
 }

@@ -23,7 +23,7 @@ func main() {
 	s.initDb()
 
 	log.Println("Starting server.")
-	err := http.ListenAndServe(":8080", s.Router)
+	err := http.ListenAndServe(config.Server.Port, s.Router)
 	if err != nil {
 		log.Println("Server Error:", err)
 	}

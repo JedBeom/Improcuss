@@ -11,7 +11,7 @@ func getTmpl(names ...string) (t *template.Template) {
 	var files []string
 
 	for _, file := range names {
-		files = append(files, fmt.Sprintf("tmpl/%s.tmpl", file))
+		files = append(files, fmt.Sprintf("tmpl/%s.html", file))
 	}
 	t = template.Must(template.ParseFiles(files...))
 	return

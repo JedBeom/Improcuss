@@ -16,7 +16,7 @@ create table users
 );
 
 alter table users
-  owner to beom;
+  owner to improcuss;
 
 create unique index users_email_uindex
   on users (email);
@@ -41,7 +41,7 @@ create table sessions
 );
 
 alter table sessions
-  owner to beom;
+  owner to improcuss;
 
 create unique index sessions_uuid_uindex
   on sessions (uuid);

@@ -7,6 +7,11 @@
 
     "-": "ssl-modes: disable, require, verify-ca, verify-full. For more information, https://godoc.org/github.com/lib.pq",
     "ssl-mode": "disable",
-
+  },
+  "server": {
+      "domain": "your_domain.com",
+      "port": ":8080",
+      "site_name": "Improcuss"
   }
+
 }

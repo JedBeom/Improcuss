@@ -1,0 +1,42 @@
+{{ define "content" }}
+
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>잘못된 접근입니다.</strong>
+    </div>
+
+    <div class="jumbotron">
+        <h1>Improcuss에서 대화를 나누세요</h1>
+        <p>같은 조직의 사람들끼리 스레드를 열어 이야기를 시작하세요.</p>
+    </div>
+
+    <div class="container">
+
+        <h5 class="card-header-custom">최고 댓글</h5>
+        <div class="card-group">
+
+            {{ range .Threads }}
+
+                {{ if not .Invisible }}
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-comment"></i> {{ .Title }}</h5>
+                            <p class="card-text">
+                                <i class="fas fa-user"></i> {{ .NumUser }}명 - <i class="far fa-clock"></i>
+                                <time>{{ .ModifiedAt }}</time>
+                                <br>
+                                <i class="far fa-comments"></i> {{ .NumRes }}개
+                            </p>
+                        </div>
+                    </div>
+                {{ end }}
+
+            {{ end }}
+
+        </div>
+
+    </div>
+
+{{ end }}

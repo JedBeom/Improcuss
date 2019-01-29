@@ -8,13 +8,21 @@ import (
 )
 
 type Config struct {
-	DB DB `json:"db"`
+	DB     DB           `json:"db"`
+	Server configServer `json:"server"`
 }
 
 type DB struct {
 	Name     string `json:"name"`
 	User     string `json:"user"`
 	Password string `json:"password"`
+	Host     string `json:"host"`
+}
+
+type configServer struct {
+	Domain   string `json:"domain"`
+	Port     string `json:"port"`
+	SiteName string `json:"site_name"`
 }
 
 var (

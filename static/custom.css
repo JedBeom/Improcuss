@@ -34,3 +34,54 @@ body {
 .card-group > .card {
     margin-bottom: unset !important;
 }
+
+.notFound {
+    /*
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    */
+
+    font-weight: 500;
+    font-family: 'Noto Serif KR', 'Noto Serif CJK KR', sans-serif;
+}
+
+.notFound > h1 {
+    font-size: 6rem !important;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+.notFound > p {
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.speech {
+    border-left: 3px solid #ccc;
+    padding: 8px 12px;
+    color: #6f6f6f;
+    font-weight: 500;
+    font-family: 'Noto Serif KR', 'Noto Serif CJK KR', sans-serif;
+    font-size: small;
+    /*
+    position: fixed;
+    bottom: unset;
+    z-index: 1030;
+    */
+    left: 1.2rem !important;
+    white-space: nowrap;
+    overflow: auto;
+    margin-right: 15px;
+}
+
+.back-home {
+    font-size: 1.3rem;
+    font-family: 'Black Han Sans', sans-serif;
+}

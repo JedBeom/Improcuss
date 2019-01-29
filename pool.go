@@ -1,9 +1,6 @@
 package main
 
-import (
-	"sync"
-)
-
+/*
 var (
 	sWPool *sync.Pool
 )
@@ -20,3 +17,4 @@ func initsWPool() {
 	}
 
 }
+*/
