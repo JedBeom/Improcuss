@@ -6,3 +6,8 @@ Improcuss
 *.exe
 
 go.sum
+
+*.key
+*.pem
+*.cert
+

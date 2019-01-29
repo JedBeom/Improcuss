@@ -23,6 +23,9 @@ type configServer struct {
 	Domain   string `json:"domain"`
 	Port     string `json:"port"`
 	SiteName string `json:"site_name"`
+	SSL      bool   `json:"SSL"`
+	Cert     string `json:"cert"`
+	Key      string `json:"key"`
 }
 
 var (

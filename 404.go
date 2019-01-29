@@ -2,11 +2,13 @@ package main
 
 import (
 	"encoding/json"
+	"html/template"
 	"io/ioutil"
 	"log"
 	"math/rand"
 	"net/http"
 	"os"
+	"sync"
 	"time"
 )
 
@@ -39,11 +41,20 @@ func loadSaying() {
 
 func NotFound() http.HandlerFunc {
 
+	var (
+		once sync.Once
+		t    *template.Template
+	)
+
 	return func(w http.ResponseWriter, r *http.Request) {
+
+		once.Do(func() {
+			t = getTmpl("404")
+		})
 
 		w.WriteHeader(http.StatusNotFound)
 
-		pushStatic(w)
+		// pushStatic(w)
 
 		ra := rand.New(rand.NewSource(time.Now().UnixNano()))
 		x := ra.Intn(len(saying))
@@ -56,7 +67,6 @@ func NotFound() http.HandlerFunc {
 			saying[x],
 		}
 
-		t := getTmpl("404")
 		err := t.Execute(w, data)
 		if err != nil {
 			log.Println(err)
