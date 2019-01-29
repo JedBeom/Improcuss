@@ -1,0 +1,14 @@
+[Service]
+User=pi
+Group=pi
+ExecStart=/usr/bin/sudo /home/pi/sites/Improcuss/Improcuss
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=IMPROCUSS
+WorkingDirectory=/home/pi/sites/
+
+Restart=always
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
