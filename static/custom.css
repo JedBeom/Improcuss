@@ -85,3 +85,8 @@ body {
     font-size: 1.3rem;
     font-family: 'Black Han Sans', sans-serif;
 }
+
+.cat-link {
+    margin-top: 1rem;
+    color: darkslategray;
+}
